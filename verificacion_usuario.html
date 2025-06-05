@@ -164,12 +164,12 @@
     }
 
     try {
-      const response = await fetch('http://127.0.0.1:5000/verify-code', {
+      const response = await fetch('https://usm-dlku.onrender.com/verify-code', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, phone, code }), // Asegúrate de enviar email o phone
+        body: JSON.stringify({ email, phone, code }),
       });
 
       if (response.ok) {
@@ -218,7 +218,7 @@
     }, 1000);
 
     try {
-      const response = await fetch('http://127.0.0.1:5000/send-code', {
+      const response = await fetch('https://usm-dlku.onrender.com/send-code', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

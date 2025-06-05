@@ -284,7 +284,7 @@ const laCaliforniaMarker = new mapboxgl.Marker(laCaliforniaEl)
   .addTo(map);
 
 // Cargar rutas y crear marcadores dinámicos desde la base de datos
-fetch('http://127.0.0.1:5000/api/rutas')
+fetch('https://usm-dlku.onrender.com/api/rutas')
   .then(res => res.json())
   .then(rutas => {
     rutas.forEach(ruta => {
