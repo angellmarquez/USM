@@ -10,12 +10,10 @@ from flask import send_from_directory
 
 app = Flask(__name__)
 app.secret_key = 'TU_SECRETO_AQUI'  # Cambia esto por una clave secreta segura
-CORS(app, supports_credentials=True, origins=[
-    "https://angellmarquez.github.io",
-    "https://usm-dlku.onrender.com",
-    "http://127.0.0.1:5500",
-    "http://localhost:5500"
-])
+
+# Configuración para cookies cross-origin seguras
+app.config['SESSION_COOKIE_SAMESITE'] = 'None'
+app.config['SESSION_COOKIE_SECURE'] = True
 
 # Configuración de Flask-Mail
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
