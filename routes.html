@@ -257,7 +257,12 @@
           // Evento para el botón "Cómo llegar"
           panel.querySelector('.como-llegar-btn').addEventListener('click', function(e) {
             e.stopPropagation();
-            localStorage.setItem('showRouteTo', ruta.nombre);
+            // Guarda nombre y coordenadas de la estación
+            localStorage.setItem('showRouteTo', JSON.stringify({
+              nombre: ruta.nombre,
+              lat: ruta.lat,
+              lng: ruta.lng
+            }));
             window.location.href = 'mapa.html';
           });
 
